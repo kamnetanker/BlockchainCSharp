@@ -7,6 +7,7 @@ namespace Blockchain1.B
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Console.WriteLine("Simple changes for commit a new branch!");
         }
     }
 }
