@@ -1,0 +1,15 @@
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\bin\Debug\net5.0\Blockchain2.B.exe
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\bin\Debug\net5.0\Blockchain2.B.deps.json
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\bin\Debug\net5.0\Blockchain2.B.runtimeconfig.json
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\bin\Debug\net5.0\Blockchain2.B.runtimeconfig.dev.json
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\bin\Debug\net5.0\Blockchain2.B.dll
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\bin\Debug\net5.0\ref\Blockchain2.B.dll
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\bin\Debug\net5.0\Blockchain2.B.pdb
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\obj\Debug\net5.0\Blockchain2.B.GeneratedMSBuildEditorConfig.editorconfig
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\obj\Debug\net5.0\Blockchain2.B.AssemblyInfoInputs.cache
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\obj\Debug\net5.0\Blockchain2.B.AssemblyInfo.cs
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\obj\Debug\net5.0\Blockchain2.B.csproj.CoreCompileInputs.cache
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\obj\Debug\net5.0\Blockchain2.B.dll
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\obj\Debug\net5.0\ref\Blockchain2.B.dll
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\obj\Debug\net5.0\Blockchain2.B.pdb
+F:\all\programming\CSharp\Blockchain\Solutions\BlockchainSLN\Blockchain1.B\obj\Debug\net5.0\Blockchain2.B.genruntimeconfig.cache
