@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Blockchain2.B
@@ -88,7 +89,18 @@ namespace Blockchain2.B
                 Console.WriteLine("Невозможно загрузить файл конфигурации. Проверьте корректность файла конфигурации");
                 return;
             }
-
+            if (hash1 != "" && hash2 != "")
+            {
+                List<string> diffLog = new List<string>();
+                hBC.Diff(hash1, hash2, out diffLog);
+                for (int i = 0; i < diffLog.Count; i++) Console.WriteLine(diffLog[i]);
+            }
+            if (str != "")
+            {
+                hBC.AddString(str);
+            }
+            hBC.SaveStatement();
+            Console.WriteLine("Bye! =>");
 
         }
     }
