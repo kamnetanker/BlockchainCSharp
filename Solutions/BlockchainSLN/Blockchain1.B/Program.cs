@@ -40,6 +40,10 @@ namespace Blockchain2.B
         public static void InitByConfig()
         {
             hBC = new HashBlockChainer(conf);
+            if (hBC.inited == false)
+            {
+                Console.WriteLine("Ошибка инициализации HashBlockChainer, скорее всего конфигурационные файлы сломаны.");
+            }
         }
         static void Main(string[] args)
         {

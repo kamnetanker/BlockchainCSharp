@@ -89,5 +89,15 @@ namespace Blockchain2.B
             }
             return retE;
         }
+        public byte[] getRandomByteArray(int n=256)
+        {
+            byte[] ret = new byte[n];
+            Random rnd = new Random();
+            for(int i=0; i<n; i++)
+            {
+                ret[i] = (byte)rnd.Next(0, 256);
+            }
+            return ret;
+        }
     }
 }
