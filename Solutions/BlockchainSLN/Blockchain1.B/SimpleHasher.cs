@@ -11,7 +11,9 @@ namespace Blockchain
 { 
     public class HashSequence
     {
+        // Строка данных
         public string data { get; set; }
+        // Хеш в формате Base64
         public string hash { get; set; }
         public HashSequence prevHash { get; set; }
         public HashSequence()
@@ -103,9 +105,11 @@ namespace Blockchain
             // Подготавливаем массивы байт для хеширования
             byte[] bdata = Encoding.UTF8.GetBytes(data);
             byte[] bprevhash = Convert.FromBase64String(hs.hash);
+
             // Конкатенируем массивы
             bdata = bdata.Concat(bprevhash).ToArray();            
 
+            //Вычисляем хеш и переводим его в строку
             byte[] hash = ha.ComputeHash(bdata);
             string shash = Convert.ToBase64String(hash);
 
