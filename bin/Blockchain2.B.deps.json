@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Blockchain2.B/1.0.0": {
+        "runtime": {
+          "Blockchain2.B.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Blockchain2.B/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

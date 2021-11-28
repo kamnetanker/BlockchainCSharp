@@ -28,6 +28,10 @@ namespace Blockchain2.B
         public string[] hashes { get; set; }
         // Массив строк
         public string[] strs { get; set; } 
+        public BlockChain()
+        {
+
+        }
         public BlockChain(string hbcHash, string parentBlock, int algo, int size)
         {
             // Указываем того, кто подписывает блок
@@ -62,6 +66,7 @@ namespace Blockchain2.B
             }
             else
             {
+                //Console.WriteLine(File.ReadAllText(path));
                 return JsonSerializer.Deserialize<BlockChain>(File.ReadAllText(path));
             }
         }

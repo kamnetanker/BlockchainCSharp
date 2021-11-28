@@ -60,6 +60,7 @@ namespace Blockchain2.B
                         this.signedBlocks.Add(jn.Value);
                     }
                     // Загружаем из файла блока текущий блок.
+                    //Console.WriteLine(this.blockDestination + "/" + json_config["currentBlock"] + ".blck");
                     this.curBlock = BlockChain.FromFile(this.blockDestination+"/"+json_config["currentBlock"]+".blck");
                     
                 }
@@ -68,7 +69,7 @@ namespace Blockchain2.B
             {
                 // Если же конфигурации не существует, её необходимо создать
                 // Генерируем случайный идентификатор для hbc
-                this.hbcId = hasher.ComputeHash(Convert.ToBase64String(conf.getRandomByteArray(512)));
+                this.hbcId = hasher.ComputeHash(Convert.ToHexString(conf.getRandomByteArray(512)));
                 // Устанавливаем пустой идентификатор последнего блока
                 this.lastBlockHash = "";
                 // Создаём блок

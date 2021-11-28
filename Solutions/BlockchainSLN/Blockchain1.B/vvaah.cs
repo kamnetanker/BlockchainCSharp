@@ -39,7 +39,7 @@ namespace Blockchain2.B
             // Вычисляем хэш строки
             byte[] result = hA.ComputeHash(bdata);
             // Переводим массив байт в base64 строку
-            return Convert.ToBase64String(result);
+            return Convert.ToHexString(result);
 
         }
     }
