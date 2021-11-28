@@ -37,6 +37,10 @@ namespace Blockchain2.B
                 }
             }
         }
+        public static void InitByConfig()
+        {
+            hBC = new HashBlockChainer(conf);
+        }
         static void Main(string[] args)
         {
             /*
@@ -57,9 +61,28 @@ namespace Blockchain2.B
             */
             //Чтение параметров командной строки
             ReadInput(args);
+            //Если указан конфиг, то 
+            //Попытаться загрузить конфиг из указанного места
+            //Иначе
+            //    Попытаться загрузить config.conf из локальной директории
             if (File.Exists(configPath))
             {
-
+                conf = new Config(configPath);
+            }
+            else
+            {
+                Console.WriteLine("Невозможно загрузить файл конфигурации. Используйте -c filepath");
+                return;
+            }
+            //Если конфиг успешно загружен, то провести инициализацию всех переменных
+            if (conf.loaded)
+            {
+                InitByConfig();
+            }
+            else
+            {
+                Console.WriteLine("Невозможно загрузить файл конфигурации. Проверьте корректность файла конфигурации");
+                return;
             }
 
         }

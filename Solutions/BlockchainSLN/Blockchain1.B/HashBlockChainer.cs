@@ -15,6 +15,7 @@ namespace Blockchain2.B
         public List<string> signedBlocks { get; set; }
         public BlockChain curBlock { get; set; }
         public vvaah hasher;
+        public bool inited = false;
         public HashBlockChainer(Config conf)
         {
 
