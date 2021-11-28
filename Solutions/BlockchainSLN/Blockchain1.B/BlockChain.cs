@@ -10,14 +10,23 @@ namespace Blockchain2.B
 {
     class BlockChain
     {
+        // Идентификатор блока
         public string blockHash { get; set; }
+        // Идентификатор создателя
         public string hbcCreator { get; set; }
+        // Идентификатор родительского блока
         public string parentHash { get; set; }
+        // Время создания блока
         public string timeStamp { get; set; }
+        // Идентификатор алгоритма хэширования
         public int hashAlgo { get; set; }
+        // Размер блока
         public int size { get; set; }
+        // Итератор
         public int iter { get; set; }
+        // Массив хэшей
         public string[] hashes { get; set; }
+        // Массив строк
         public string[] strs { get; set; } 
         public BlockChain(string hbcHash, string parentBlock, int algo, int size)
         {

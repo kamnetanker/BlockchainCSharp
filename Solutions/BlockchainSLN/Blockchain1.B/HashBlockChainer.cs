@@ -18,6 +18,8 @@ namespace Blockchain2.B
         public string lastBlockHash { get; set; }
         // Размер блока
         public int blockSize { get; set; }
+        // Алгоритм хеширования
+        public int hashAlgo { get; set; }
         // Список подписанных блоков
         public List<string> signedBlocks { get; set; }
         // Текущий блок
@@ -31,6 +33,8 @@ namespace Blockchain2.B
             hasher = new vvaah(conf.getHashAlgorithm(), conf.getEncoding());
             // Размер блока
             this.blockSize = conf.blockSize;
+            // Алгоритм хэширования
+            this.hashAlgo = conf.hashAlgo;
 
             // Устанавливаем рабочую директорию
             blockDestination = conf.destDir;
@@ -98,11 +102,24 @@ namespace Blockchain2.B
             // Сохраняем текущую конфигурацию
             this.SaveStatement();
         }
+        public void CreateBlock()
+        {
+            // Сохраняем текущий блок
+            this.SaveBlock();
+            // Создаём блок
+            this.curBlock = new BlockChain(hbcId, lastBlockHash, this.hashAlgo, this.blockSize);
+            // Подписываем блок
+            this.SignBlock();
+            // Добавляем блок в подписанные
+            this.signedBlocks.Add(this.curBlock.blockHash);
+            // Сохраняем текущую конфигурацию
+            this.SaveStatement();
+        }
         public void SaveBlock()
         {
             // Записываем текущий блок в файл
             this.curBlock.ToFile(this.blockDestination + "/" + this.curBlock.blockHash + ".blck");
-            // Запоминаем хэш последнего сохранённого блокад
+            // Запоминаем хэш последнего сохранённого блока
             this.lastBlockHash = this.curBlock.blockHash;
         }
         public void SaveStatement()
@@ -133,16 +150,38 @@ namespace Blockchain2.B
             // Записываем в файл
             File.WriteAllText(this.blockDestination + "/curData.conf", json_to_save);
         }
+        public void AddString(string str)
+        {
+            // Создаём переменную последнего хэша
+            string lastHash = "";
+            // Если уже есть записанные хэши
+            if (this.curBlock.iter > 0)
+            {
+                // То берём последний для подписи
+                lastHash = this.curBlock.hashes[this.curBlock.iter-1];
+            }
+            else
+            {
+                // Иначе берём хеш родительского блока
+                lastHash = this.curBlock.parentHash;
+            }
+            // Вычисляем новый хэш
+            string hash = this.hasher.ComputeHash(str + lastHash);
+            // Добавляем строку и хэш в блок
+            this.curBlock.AddHash(str, hash);
+            // Если блок заполнен, то создаём новый блок
+            if (this.curBlock.iter == this.blockSize)
+            {
+                this.CreateBlock();
+            }
+        }
+
         public void Diff(string blockA, string blockB, out List<string> diff)
         {
             List<string> diffLog = new List<string>();
 
             diff = diffLog;
             return;
-        }
-        public void AddString(string str)
-        {
-
         }
     }
 }
